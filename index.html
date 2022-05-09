@@ -10,21 +10,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
     <link rel="stylesheet" href="./css/styles.css">
 
 </head>
 <body>
     
-    <!--Шапка сайта-->
+    <!--Шапка сайту-->
 
     <header class="header ">
         <div class="container main-nav">
         <nav class="header-nav main-nav ">
             <a class="logo" href="./index.html">Web<span class="logo-header">Studio</span></a>
                 <ul class="header-list main-nav">
-                    <li class="header-item"><a href="./index.html" class="header-link current" >Студия</a></li>
-                    <li class="header-item"><a href="./portfolio.html" class="header-link" >Портфолио</a></li>
-                    <li class="header-item"><a href="" class="header-link" >Контакты</a></li>
+                    <li class="header-item ">
+                        <a href="./index.html" class="header-link current" >Студия</a>
+                    </li>
+                    <li class="header-item">
+                        <a href="./portfolio.html" class="header-link" >Портфолио</a>
+                    </li>
+                    <li class="header-item">
+                        <a href="" class="header-link" >Контакты</a>
+                    </li>
                 </ul>
         </nav>
         <ul class="header-info main-nav">
@@ -49,16 +56,16 @@
 
     <main>
     
-    <!--Секция герой-->
+    <!--Секція герой-->
 
     <section class="hero">
         <div class="container">
-        <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-            <button class="button-hero-link" type="button"> Заказать услугу</button>
+        <h1 class="hero-title ">Эффективные решения для вашего бизнеса</h1>
+            <button class="button-hero-link" type="button" data-modal-open> Заказать услугу</button>
         </div>
         </section>
     
-    <!--Описание преимуществ-->
+    <!--Опис переваг-->
 
     <section class="benefits">
         <div class="container">
@@ -70,7 +77,7 @@
                         <use href="./images/icons.svg/icon.svg#icon-antenna-icon"></use>
                     </svg>
                 </div>
-                <h3 class="benefits-title">Внимание к деталям</h3>
+                <h3 class="benefits-title ">Внимание к деталям</h3>
                     <p class="benefits-text">Идейные соображения, а также начало повседневной работы по формированию позиции.</p>
             </li>
             <li class="benefits-item">
@@ -104,15 +111,36 @@
         </div>
     </section>
     
-    <!--Чем мы занимаемся-->
+    <!--Чим ми займаємось-->
 
     <section class="activity">
         <div class="container">
         <h2 class="activity-title">Чем мы занимаемся</h2>
             <ul class="activity-list">
-                <li class="activity-item"><img src="./images/what_we_do1.jpg" alt="работа с ПК" width="370"></li>
-                <li class="activity-item"><img src="./images/what_we_do2.jpg" alt="работа с смартфоном" width="370"></li>
-                <li class="activity-item"><img src="./images/what_we_do3.jpg" alt="работа с планщетом" width="370"></li>
+                <li class="activity-item">
+                    <div class="activity-content">
+                        <img src="./images/what_we_do1.jpg" alt="работа с ПК" width="370">
+                            <div class="activity-wrap">
+                                <p class="activity-text">Десктопные приложения</p>
+                            </div>
+                    </div>
+                </li>
+                <li class="activity-item">
+                    <div class="activity-content">
+                        <img src="./images/what_we_do2.jpg" alt="работа с смартфоном" width="370">
+                            <div class="activity-wrap">
+                                <p class="activity-text">Мобильные приложения</p>
+                            </div>
+                    </div>
+                </li>
+                <li class="activity-item">
+                    <div class="activity-content">
+                        <img src="./images/what_we_do3.jpg" alt="работа с планщетом" width="370">
+                            <div class="activity-wrap">
+                                <p class="activity-text">Дизайнерские решения</p>
+                            </div>
+                    </div>
+                </li>
             </ul>
             </div>
     </section>
@@ -275,7 +303,7 @@
         </div>
     </section>
 
-    <!--Пoстоянные клиенты -->
+    <!--Постійні клієнти -->
 
     <section class="clients">
         <div class="container">
@@ -330,7 +358,7 @@
 
     </main>
 
-    <!--Подвал сайта-->
+    <!--Підвал сайту-->
 
     <footer class="footer">
         <div class="container footer-container">
@@ -379,6 +407,20 @@
             </div>
         </div>
     </footer>
-    
+
+    <!--Модальне вікно -->
+
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button type="button " class="modal-button" data-modal-close>
+                <svg class="modal-close" width="15" height="15">
+                    <use href="./images/icons.svg/icon.svg#icon-close"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
+
 </body>
 </html>

@@ -128,6 +128,22 @@ letter-spacing: 0.03em;
 .header-icon{
     margin-right: 10px;
 }
+.header-item{
+    position: relative;
+}
+
+.header-item .current::after{
+    content: '';
+    width: 100%;
+    height: 4px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--active-color-change);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
 /*--------------------------- Hero ------------------------- */
 
 .hero{
@@ -142,8 +158,6 @@ letter-spacing: 0.03em;
         rgba(47, 48, 58, 0.4),
         rgba(47, 48, 58, 0.4)),
     url(../images/hero-title.jpg);
-    /* background-image: linear-gradient rgba(47, 48, 58, 0.4);
-    background-image: url(../images/hero-title.jpg); */
     max-width: 1600px;
     background-repeat: no-repeat;
     min-height: 600px;
@@ -237,6 +251,62 @@ color: var(--primary-text-color);
     color: var(--secondary-test-color);
 }
 
+/* ------------------- backdrop --------------------------- */
+
+.backdrop{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity 400ms, isibility 400ms;
+}
+
+.backdrop.is-hidden .modal{
+    transform: skew(50deg)
+}
+
+.modal{
+    position: absolute;
+    width: 528px;
+    min-height: 581px;
+
+    background: var(--hero-text-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: 400ms;
+
+}
+
+.modal-button{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background-color: var(--hero-text-color);
+    
+}
+.is-hidden{
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+
 /*------------------------- activity -----------------------*/
 .activity{
     padding-top: 0;
@@ -265,6 +335,34 @@ color: var(--primary-text-color);
     text-align: center;
     letter-spacing: 0.03em;
     color: var(--primary-text-color);
+}
+
+.activity-content{
+    position: relative;
+}
+
+.activity-wrap{
+    width: 100%;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+
+    background-color: rgba(47, 48, 58, 0.8);
+
+}
+
+.activity-text{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--hero-text-color);
+
 }
 
 /*-------------------------- team -------------------------*/
@@ -551,13 +649,39 @@ color: var(--primary-text-color);
     margin-bottom: 0;
 }
 
- .portfolio-hero-content{
+.portfolio-hero-content{
     padding: 20px 24px;
     border-right:1px solid #EEEEEE;
     border-bottom:1px solid #EEEEEE;
     border-left: 1px solid #EEEEEE;
 
  }
+
+ .portfilio-hero-wrap{
+     position: relative;
+     overflow: hidden;
+ }
+
+.portfolio-hero-item:hover .portfolio-hero-text{
+    transform: translateY(0%)
+}
+
+.portfolio-hero-text{
+    position: absolute;
+    top: 0;
+    padding: 63px 24px;
+    height: 100%;
+
+    background-color: var(--active-color-change);
+    color: var(--hero-text-color);
+    
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.03em;
+    transform: translateY(100%);
+    transition: transform 250ms linear;
+}
 
 .portfolio-hero-title{   
     margin-top: 0px;
@@ -568,14 +692,14 @@ color: var(--primary-text-color);
     display: block;
 }
 
- .portfolio-hero-link:focus, .portfolio-hero-link:hover{
+.portfolio-hero-link:focus, .portfolio-hero-link:hover{
     box-sizing: border-box;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
     0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
  }
 
- .portfolio-hero{
+.portfolio-hero{
     padding-top: 94px;
     padding-bottom: 94px;
  }
