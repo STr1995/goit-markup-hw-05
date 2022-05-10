@@ -200,6 +200,8 @@ letter-spacing: 0.03em;
     align-items: center;
     text-align: center;
     letter-spacing: 0.06em; 
+
+    
 } 
 
 .button-hero-link:hover,
@@ -275,7 +277,8 @@ color: var(--primary-text-color);
 }
 
 .backdrop.is-hidden .modal{
-    transform: skew(50deg)
+    
+    transform: translate(100px);
 }
 
 .modal{
